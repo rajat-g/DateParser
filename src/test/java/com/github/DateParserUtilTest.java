@@ -33,6 +33,13 @@ public class DateParserUtilTest {
         assertEquals("2022-03-22 23:22:00",simpleDateFormat.format(dateWithFormat.getDate()));
     }
 
+    @Test
+    public void test2_2() {
+        DateWithFormat dateWithFormat = DateParserUtil.getDateWithFormat("Mar 22, 2022 11:22",false, true);
+        assertEquals("MMM dd, yyyy HH:mm",dateWithFormat.getFormat());
+        assertEquals("2022-03-22 11:22:00",simpleDateFormat.format(dateWithFormat.getDate()));
+    }
+
 
     @Test
     public void test3() {
