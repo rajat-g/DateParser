@@ -13,6 +13,7 @@ public final class DateParserUtil {
             String format = getFormat(stringDate, preferMonthFirst, prefer24HourTime);
             if (Objects.nonNull(format)) {
                 SimpleDateFormat sdf = new SimpleDateFormat(format);
+                sdf.setLenient(false);
                 try {
                     Date date = sdf.parse(stringDate);
                     return new DateWithFormat(date, format);

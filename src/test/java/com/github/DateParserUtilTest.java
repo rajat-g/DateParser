@@ -237,15 +237,13 @@ public class DateParserUtilTest {
     @Test
     public void test25_1() {
         DateWithFormat dateWithFormat = DateParserUtil.getDateWithFormat("13-13-2022 11:22:33 am",true, false);
-        assertEquals("MM-dd-yyyy hh:mm:ss a",dateWithFormat.getFormat());
-        assertEquals("2023-01-13 11:22:33",simpleDateFormat.format(dateWithFormat.getDate()));
+        assertNull(dateWithFormat);
     }
 
     @Test
     public void test25_2() {
         DateWithFormat dateWithFormat = DateParserUtil.getDateWithFormat("13-13-2022 11:22:33 am",false, false);
-        assertEquals("dd-MM-yyyy hh:mm:ss a",dateWithFormat.getFormat());
-        assertEquals("2023-01-13 11:22:33",simpleDateFormat.format(dateWithFormat.getDate()));
+        assertNull(dateWithFormat);
     }
 
     @Test
